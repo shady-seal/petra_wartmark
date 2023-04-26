@@ -1,0 +1,39 @@
+<div class="portfolio-container">
+  <div class="header d-flex justify-content-between">
+    <%= image_tag "logo1.png", alt: "logo", class: "logo" %>
+    <h3 class="text-mybeige">Portfolio</h3>
+    <div class="page-navigation d-flex align-items-center">
+      <%= link_to "Home", root_path, class: "nav-link" %>
+    </div>
+  </div>
+  <div class="line"></div>
+
+  <p class="page-nav-top">Showing <%= @arts.offset_value + 1 %> - <%= @arts.offset_value + @arts.length %> of <%= @arts.total_entries %> results</p>
+
+  <% if user_signed_in? %>
+    <%= link_to new_art_path, class: "icons ms-4" do %><i class="fa-solid fa-plus"></i><% end %>
+  <% end %>
+
+  <% @arts.each_with_index do |art, index| %>
+    <% if index % 2 == 0 %>
+      <div class="row ms-0 me-0 art-container">
+    <% end %>
+
+    <div class="col-md-6 d-flex justify-content-center">
+      <%= render "art_card", art: art %>
+    </div>
+
+    <% if index % 2 == 1 || index == @arts.size - 1 %>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>
+
+<% if user_signed_in? %>
+  <%= link_to destroy_user_session_path, method: :delete, data:{ turbo: :false }, class: "icons ms-4" do %><i class="fa-solid fa-door-open"></i><% end %>
+<% end %>
+
+<div class="pagination d-flex justify-content-center mb-5 page-nav">
+  <%= will_paginate @arts %>
+</div>

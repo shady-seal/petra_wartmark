@@ -1,0 +1,140 @@
+.art-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 5vw;
+}
+
+.wrapper {
+  max-width: 30vw;
+  position: relative;
+}
+
+.wrapper i {
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  background: #C3BAAA;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-size: 1.2rem;
+  position: absolute;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out;
+}
+
+.wrapper i:hover {
+  background: #897E69;
+}
+
+.wrapper i:first-child {
+  left: -23px;
+  display: none;
+}
+
+.wrapper i:last-child {
+  right: -23px;
+}
+
+#left {
+  z-index: 2;
+}
+
+.wrapper .carousel {
+  font-size: 0px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging .img-carousel {
+  pointer-events: none;
+}
+
+.carousel .img-carousel {
+  height: 350px;
+  width: 260px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-left: 14px;
+}
+
+.carousel .img-carousel:first-child {
+  margin-left: 0;
+}
+
+.art-details {
+  margin-right: 15vw;
+  line-height: 1vh;
+  padding-top: 3vh;
+}
+
+.fa-envelope {
+  color: #C3BAAA;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.fa-envelope:hover {
+  color: #897E69;
+}
+
+.page-nav-top {
+  margin-left: 72px;
+  color: #C3BAAA;
+  font-size: smaller;
+}
+
+.page-nav {
+  color: #C3BAAA;
+  font-size: smaller;
+  a {
+    color: #C3BAAA;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: auto 1vw;
+  }
+  a:hover {
+    color: #897E69;
+  }
+  .next_page {
+    margin-left: 0 !important;
+  }
+  .current {
+    margin: auto 1vw;
+  }
+  .previous_page {
+    margin-right: 0 !important;
+  }
+}
+
+.icons {
+  color: #875053;
+  transition: color 0.3s ease;
+}
+
+.icons:hover {
+  color: #6D213C;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel .img-carousel {
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carousel .img-carousel {
+    width: 100%;
+  }
+}

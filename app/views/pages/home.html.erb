@@ -1,2 +1,57 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div>
+  <div class="main-container" id="top">
+    <div class="header d-flex justify-content-between">
+      <div>
+        <%= image_tag "logo1.png", alt: "logo", class: "logo" %>
+      </div>
+      <div class="page-navigation d-flex justify-content-between align-items-center">
+        <div class="me-5">
+          <%= link_to "Portfolio", arts_path, class: "nav-link" %>
+        </div>
+        <div class="me-5" data-controller="scroll-into">
+          <%= link_to "About", "#about", class: "nav-link", data: {action: "click->scroll-into#scrollIntoAbout"} %>
+        </div>
+        <div data-controller="scroll-into">
+          <%= link_to "Contact", "#contact", class: "nav-link", data: {action: "click->scroll-into#scrollIntoContact"} %>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="card-div d-flex justify-content-around">
+      <div><%= image_tag "pic1.png", alt: "alttext", class: "card-home" %></div>
+      <div><%= image_tag "pic2.png", alt: "alttext", class: "card-home" %></div>
+      <div><%= image_tag "pic3.png", alt: "alttext", class: "card-home" %></div>
+      <div><%= image_tag "pic4.png", alt: "alttext", class: "card-home" %></div>
+      <div><%= image_tag "pic5.png", alt: "alttext", class: "card-home" %></div>
+    </div>
+    <div class="content-div">
+      <h1 class="text-mybeige mb-3">Petra Wartmark Studios</h1>
+      <p>I find inspiration in the environment and people around me. Not the particular objects in itself but the experiences and emotional connection. The subtle shifts in seeing the world around me heavily influence my work.</p>
+    </div>
+  </div>
+  <div class="about-container" id="about">
+    <h2>About</h2>
+    <p class="about-text">I didn't define myself as a creative person, but a couple of years ago, something changed. I found the urge to express myself and expand my creativity. I began painting in search of self-expression and more profound connection with life and myself.</p>
+    <p class="about-text">Love working in large scale and using instinct motion to direct my work compositionally and apply my mark making. Mainly working with acrylics while utilizing both traditional and found objects or things within reach as tools to interact with on canvas. Passionate about the unique and integral impact artwork can have within a space.</p>
+  </div>
+  <div class="contact-container" id="contact">
+    <div></div>
+    <div class="justify-content-center">
+      <h3 class="text-mybeige mb-3">Contact</h3>
+      <%= simple_form_for [@request] do |f|%>
+        <div class="form-inputs">
+          <%= f.input :email, label: false, placeholder: "Your Email" %>
+          <%= f.input :name, label: false, placeholder: "Your Name" %>
+          <%= f.input :content, label: false, placeholder: "Your Message" %>
+        </div>
+        <div class="form-actions">
+          <%= f.submit "Send", class: "btn-main" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/petrawartmark/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </div>
+  <footer class="main-footer" data-controller="scroll-into"><button class="arrow-up" data-action="click->scroll-into#scrollIntoTop" data-controller="hide-on-top" data-hide-on-top-target="arrow" title="Return to top"><i class="fa-solid fa-circle-arrow-up"></i></button></footer>
+</div>

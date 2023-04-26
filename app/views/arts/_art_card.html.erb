@@ -1,0 +1,29 @@
+<div class="artpiece d-flex flex-column align-items-center">
+  <h4 class="text-mybeige"><%= art.name %></h2>
+  <div class="col-md-6 d-flex justify-content-center">
+    <div class="wrapper" data-controller="carousel">
+      <i id="left" class="fa-solid fa-angle-left" data-action="click->carousel#scrollLeft"></i>
+      <div class="carousel" data-target="carousel.carousel">
+        <% art.photos.each do |photo| %>
+          <%= image_tag(photo, { alt: "alttext", class: "img-carousel", draggable: false }) %>
+        <% end %>
+      </div>
+      <i id="right" class="fa-solid fa-angle-right" data-action="click->carousel#scrollRight"></i>
+    </div>
+  </div>
+
+  <div class="art-info d-flex align-items-center">
+    <div class="art-details">
+      <p><%= art.price %>€</p>
+      <p><%= art.size %>cm</p>
+    </div>
+    <% if user_signed_in? %>
+      <%= link_to edit_art_path(art), class: "icons" do %><i class="fa-solid fa-wrench"></i><% end %>
+    <% end %>
+    <button type="button" title="Request" class="border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#new_request_modal">
+      <i class="fa-solid fa-envelope"></i>
+    </button>
+  </div>
+</div>
+
+<%= render "modal", request: @request %>

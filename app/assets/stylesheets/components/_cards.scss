@@ -1,0 +1,29 @@
+.card-home {
+  height: 260px;
+  width: 190px;
+  border-radius: 2px;
+}
+
+.card-portfolio-main {
+  height: 350px;
+  width: 260px;
+  border-radius: 2px;
+  margin: 5px auto;
+  transition: all 0.2s ease-in-out;
+}
+
+.card-portfolio-main:hover {
+  transform: scale(1.025);
+}
+
+.card-portfolio-small {
+  height: 170px;
+  width: 150px;
+  border-radius: 2px;
+  margin: 5px 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.card-portfolio-small:hover {
+  transform: scale(1.05);
+}

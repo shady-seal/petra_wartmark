@@ -4,5 +4,14 @@
 
 import { application } from "./application"
 
+import CarouselController from "./carousel_controller"
+application.register("carousel", CarouselController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import HideOnTopController from "./hide_on_top_controller"
+application.register("hide-on-top", HideOnTopController)
+
+import ScrollIntoController from "./scroll_into_controller"
+application.register("scroll-into", ScrollIntoController)

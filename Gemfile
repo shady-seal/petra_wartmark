@@ -75,3 +75,12 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Use Cloudinary to store images
+gem 'cloudinary'
+
+# Use Devise to have users
+gem "devise"
+
+# Use Will Paginate to display items on multiple pages
+gem 'will_paginate'

@@ -1,0 +1,47 @@
+.btn-main {
+  background-color: #C3BAAA;
+	padding: 7px 20px;
+  border-radius: 20px;
+  color: white;
+  border-width: 0px;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+.btn-main:hover {
+  background-color: #897E69;
+  color: white;
+}
+
+.form-inputs {
+  #request_email {
+    border-color: #C3BAAA;
+    color: #897E69;
+  }
+  #request_name {
+    border-color: #C3BAAA;
+    color: #897E69;
+  }
+  #request_content {
+    border-color: #C3BAAA;
+    color: #897E69;
+  }
+  ::placeholder {
+    color: #897E69;
+  }
+  :focus {
+    box-shadow: none;
+  }
+}
+
+.modal-content .form-inputs {
+  width: 350px;
+}
+
+.modal-header {
+  padding: 0;
+  padding-bottom: 4vh;
+  border-bottom: none;
+}
